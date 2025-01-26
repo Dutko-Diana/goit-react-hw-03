@@ -43,3 +43,8 @@
   background-color: #a2b4e3fd;
   border-color: #a2b4e3fd;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+}
