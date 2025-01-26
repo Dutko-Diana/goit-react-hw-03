@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-// import { IoPersonSharp } from "react-icons/io5";
+import ContactForm from "./components/ContactForm/ContactForm";
+import SearchBox from "./components/SearchBox/SearchBox";
+import ContactList from "./components/ContactList/ContactList";
+import css from "./components/ContactList/ContactList.module.css";
 
 function App() {
   const [contacts, setContacts] = useState([
@@ -9,7 +12,21 @@ function App() {
     { id: "id-3", name: "Eden Clements", number: "645-17-79" },
     { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
   ]);
-  return;
+
+  const [filter, setFilter] = useState("");
+
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  return (
+    <div className={css.body}>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      <SearchBox value={filter} onChange={setFilter} />
+      <ContactList contacts={filteredContacts} />
+    </div>
+  );
 }
 
 export default App;

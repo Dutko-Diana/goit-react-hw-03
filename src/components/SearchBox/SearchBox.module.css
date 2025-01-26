@@ -1,0 +1,19 @@
+.input {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: border-color 250ms ease-in-out;
+}
+
+input:hover,
+input:focus-visible {
+  border-color: blue;
+  outline: none;
+}
+
+.text {
+  margin-bottom: 5px;
+}
